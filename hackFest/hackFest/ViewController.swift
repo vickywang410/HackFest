@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
+    //categories
     @IBAction func price1(sender: UIButton) {
         restaurants.text = "McDonald’s, Tim Hortons, Dailo, 259 Host"
     }
@@ -80,6 +80,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var restaurantDiet: UILabel!
     
     
+    //rating restaurants
+    
     @IBAction func restaurant1(sender: UISlider) {
         let restaurant1 = lroundf(sender.value)
         rating1.text = "\(restaurant1)"
@@ -101,6 +103,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rating3: UILabel!
     
     
+    //signup
     @IBOutlet weak var signupEmail: UITextField!
     
     @IBOutlet weak var setPassword: UITextField!
@@ -112,10 +115,9 @@ class ViewController: UIViewController {
         self.setPassword.resignFirstResponder()
         self.confirmPassword.resignFirstResponder()
     }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.view.endEditing(true)
-    }
+   
     
+    //log in
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
@@ -124,6 +126,9 @@ class ViewController: UIViewController {
         self.password.resignFirstResponder()
     }
     
+    
+    //what do you like
+    
     @IBAction func recommendationSlider(sender: UISlider) {
         let recommendationSlider = lroundf(sender.value)
         recommendationRating.text = "\(recommendationSlider)"
@@ -131,15 +136,28 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var recommendationRating: UILabel!
     
+   
     @IBOutlet weak var restaurantName: UITextField!
     
     @IBOutlet weak var comment: UITextField!
     
+    
     @IBAction func addRecommendation(sender: UIButton) {
         self.restaurantName.resignFirstResponder()
         self.comment.resignFirstResponder()
+        
+           }
+    
+    @IBOutlet weak var restaurantRecommend: UILabel!
+ 
+    
+    
+    //keyboard disappears
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
